@@ -3,31 +3,51 @@
 > Domumentación oficial Open WebUI
 > https://github.com/open-webui/open-webui
 
-Instalar Container de Open WebUI
+Se hace el pull de la imagen y se ejecuta el contenedor con el comando (bash):
 ```bash
 docker run -d -p 3000:8080 -e OPENAI_API_KEY=your_secret_key -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
-La aplicación web estará disponible en: 
-- http://localhost:3000
+Al ejecutar el comando se descargará la imagen (tarda un rato) y se creará un contenedor con el nombre `open-webui` que se ejecutará en segundo plano. La aplicación web estará disponible en: http://localhost:3000
+
+Al entrar por primera vez en Open WebUI, se debe crear la Cuenta de Inicio. Esta cuenta será de Administrador.
 
 ## Configuración de Open WebUI
 
 ### Configuración de Providers
 
 **Open AI**
+Sólo hay que registrar la API Key de OpenAI y se cargarán los modelos disponibles.
 
 **Google AI Studio**
+No hay una URL disponible para crear un conector directo. Se puede utilzar un Pipeline o una Function. 
+Usar la Function: https://openwebui.com/f/justinrahb/google_genai
+Se instala la Function y se configura con la API Key de Google AI Studio. 
+Finalmente se activa y se cargarán los modelos disponibles de Google AI Studio.
+
+Límites de uso de Google AI Studio: https://ai.google.dev/pricing
 
 **Github Models**
+No hay una URL disponible para crear un conector directo. Se puede utilzar un Pipeline o una Function. 
+Usar la Function: https://openwebui.com/f/jscheah/github_models_manifold
+Se instala la Function y se configura el PAT (Personnal Access Token) de Github. 
+Finalmente se activa y se cargarán los modelos disponibles de Google AI Studio.
+
+Modelos disponibles: https://github.com/marketplace/models
+Límtes de uso de Github Models: https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits
 
 **Groq**
+En Connections se configura la URL de la API de Groq 2 y se registra la API Key.
+URL de la API: https://api.groq.com/openai/v1
 
-**Hyperbolic**
-Al registrarse regala 10$. Tiene disponible `Qwen2.5-72B-Instruct`.
-- ``API: https://api.hyperbolic.xyz/v1``
+URL de Groq Console: https://console.groq.com
 
+**Groq 2**
+En Connections se configura la URL de la API de Groq 2 y se registra la API Key.
+URL de la API: https://api.x.ai/v1
 
-### Listado de Endpoints API Free
+URL de X AI Console: https://console.x.ai/
+
+**Listado de Endpoints API Free**
 En este sitio de github se puede encontrar un listado de API Endpoints Free para probar en Open WebUI
 https://github.com/cheahjs/free-llm-api-resources 
 
