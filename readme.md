@@ -15,10 +15,10 @@ Al entrar por primera vez en Open WebUI, se debe crear la Cuenta de Inicio. Esta
 
 ### Configuración de Providers
 
-**Open AI**
+##### Open AI
 Sólo hay que registrar la API Key de OpenAI y se cargarán los modelos disponibles.
 
-**Google AI Studio**
+#####  Google AI Studio
 No hay una URL disponible para crear un conector directo. Se puede utilzar un Pipeline o una Function. 
 Usar la Function: https://openwebui.com/f/justinrahb/google_genai
 Se instala la Function y se configura con la API Key de Google AI Studio. 
@@ -26,7 +26,7 @@ Finalmente se activa y se cargarán los modelos disponibles de Google AI Studio.
 
 Límites de uso de Google AI Studio: https://ai.google.dev/pricing
 
-**Github Models**
+##### Github Models
 No hay una URL disponible para crear un conector directo. Se puede utilzar un Pipeline o una Function. 
 Usar la Function: https://openwebui.com/f/jscheah/github_models_manifold
 Se instala la Function y se configura el PAT (Personnal Access Token) de Github. 
@@ -35,19 +35,19 @@ Finalmente se activa y se cargarán los modelos disponibles de Google AI Studio.
 Modelos disponibles: https://github.com/marketplace/models
 Límtes de uso de Github Models: https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits
 
-**Groq**
+##### Groq
 En Connections se configura la URL de la API de Groq 2 y se registra la API Key.
 URL de la API: https://api.groq.com/openai/v1
 
 URL de Groq Console: https://console.groq.com
 
-**Groq 2**
+##### Groq 2
 En Connections se configura la URL de la API de Groq 2 y se registra la API Key.
 URL de la API: https://api.x.ai/v1
 
 URL de X AI Console: https://console.x.ai/
 
-**Listado de Endpoints API Free**
+##### Listado de Endpoints API Free
 En este sitio de github se puede encontrar un listado de API Endpoints Free para probar en Open WebUI
 https://github.com/cheahjs/free-llm-api-resources 
 
