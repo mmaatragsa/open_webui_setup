@@ -109,6 +109,38 @@ Para desinstalar el servicio, se ejecuta el comando:
 ngrok service uninstall
 ```
 
+## Configuración de Openai-Edge-tts en Docker
+Github Repository: https://github.com/travisvn/openai-edge-tts
 
+Se hace el pull de la imagen (https://hub.docker.com/r/travisvn/openai-edge-tts) y se ejecuta el contenedor con el comando (bash):
+```bash
+docker run -d -p 5050:5050 --name openai-edge-tts --restart always \
+  -e API_KEY=your_api_key_here \
+  -e PORT=5050 \
+  -e DEFAULT_VOICE=en-US-AndrewNeural \
+  -e DEFAULT_RESPONSE_FORMAT=mp3 \
+  -e DEFAULT_SPEED=1.0 \
+  -e DEFAULT_LANGUAGE=en-US \
+  -e REQUIRE_API_KEY=True \
+  travisvn/openai-edge-tts:latest
+```	
+> Se ejecuta en una sólo línea. Ojo al copiar y pegar el comando.
 
+En Admin Panel de Open WebUI, en la sección de Settings > Audio, se configura el Provider de Text-to-Speech con la URL del contenedor de Openai-Edge-tts.
+- Text-to-Speech Engine: http://host.docker.internal:5050/v1
+- Api Key: your_api_key_here
+
+Cada usuario puede configurar el voice en su perfil de usuario (settings).
+Las voces disponibles se pueden consultar en la documentación oficial de Openai-Edge-tts: https://tts.travisvn.com
+
+Las mejores voces son:
+- Español: 
+   - es-ES-XimenaNeural
+   - es-ES-AlvaroNeural
+- Multilenguaje:
+   - en-US-AvaMultilingualNeural (rápido)
+   - en-US-EmmaMultilingualNeural (bueno para video turoriales)
+   - en-US-AndrewMultilingualNeural
+- Inglés
+    - en-US-AnaNeural (niña)
 ## Acceso a la API REST de Open WebUI
