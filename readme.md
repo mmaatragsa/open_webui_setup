@@ -11,6 +11,14 @@ Al ejecutar el comando se descargará la imagen (tarda un rato) y se creará un 
 
 Al entrar por primera vez en Open WebUI, se debe crear la Cuenta de Inicio. Esta cuenta será de Administrador.
 
+### Actualización de Open WebUI
+Para actualizar el contenedor de Open WebUI, se ejecuta el comando (en bash):
+```bash
+docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui
+```
+Tarda un rato y se reinicia el contenedor con la versión más reciente.
+
+
 ## Configuración de Open WebUI
 
 ### Configuración de Providers
